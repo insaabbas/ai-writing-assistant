@@ -51,7 +51,7 @@ Screenshots:
 
  Demo Video:
 
-[Watch here](Pics-And-Video\Ai-assistant-video.mp4)
+[Watch here](Pics-And-Video\video.mp4)
 
 
 
