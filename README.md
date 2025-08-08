@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+ AI Writing Assistant:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple AI writing assistant web application built with React and Node.js, integrated with Google Gemini API.
 
-## Available Scripts
+ Features:
 
-In the project directory, you can run:
+ Users can select chat type: Email, Blog, Resume, or Simple Chat
+ Maintain chat history saved on server
+ Load previous chats and continue conversations
+ Clear all chats from history
+ Responsive and clean UI
 
-### `npm start`
+ Technologies Used:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ React (Frontend)
+ Node.js + Express (Backend)
+ Google Gemini API for AI responses
+ File system for chat storage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ Setup and Installation:
 
-### `npm test`
+ Backend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Navigate to backend folder (or root if both are together)
+2. Run `npm install` to install dependencies
+3. Add your Google Gemini API key inside `index.js` (replace the placeholder)
+4. Run `node index.js` to start backend on port 4000
 
-### `npm run build`
+Frontend:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to frontend folder
+2. Run `npm install` to install dependencies
+3. Run `npm start` to launch React app on port 3000
+4. Make sure backend is running before interacting with the app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+How it works:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The React app allows users to select chat types first, then input prompts.
+The backend receives prompts, sends requests to Gemini API, and saves conversations as JSON files.
+Users can load previous chats from the sidebar.
+Chats are stored on disk under the `chat-history` folder.
+Users can clear all chat history using the button at the bottom of the sidebar.
 
-### `npm run eject`
+Screenshots:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Homepage](pics-and-video/ai-assistant-pic-01.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Chat](pics-and-video/ai-assistant-pic-02.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+ Demo Video:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Watch here](Pics-And-Video\Ai-assistant-video.mp4)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project was completed by Insa Abbas on 8-9-2025.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
