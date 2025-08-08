@@ -3,12 +3,17 @@ import cors from "cors";
 import fetch from "node-fetch";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load .env variables
 
 const app = express();
 const PORT = 4000;
 
-const API_KEY = "AIzaSyDiA0MJ-LQrixOaOBWgLgL39AcrttgOUAg";
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
+const apiKey = process.env.GOOGLE_API_KEY;  // Load your key from .env
+
+// Use apiKey in your Gemini API URL like this:
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
 const CHAT_STORAGE_DIR = path.resolve("./chat-history");
 
