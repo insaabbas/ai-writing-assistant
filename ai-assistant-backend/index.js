@@ -12,12 +12,11 @@ const PORT = 4000;
 
 const apiKey = process.env.GOOGLE_API_KEY;  // Load your key from .env
 
-// Use apiKey in your Gemini API URL like this:
+
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
 const CHAT_STORAGE_DIR = path.resolve("./chat-history");
 
-// Make sure folder exists
 if (!fs.existsSync(CHAT_STORAGE_DIR)) {
   fs.mkdirSync(CHAT_STORAGE_DIR);
 }
@@ -25,7 +24,7 @@ if (!fs.existsSync(CHAT_STORAGE_DIR)) {
 app.use(cors());
 app.use(express.json());
 
-// POST: Generate AI response and save chat message(s)
+// POST: Generate AI response and save chat message
 app.post("/api/generate", async (req, res) => {
   const { prompt, chatId } = req.body;
   if (!prompt || !prompt.trim()) {
@@ -54,7 +53,7 @@ app.post("/api/generate", async (req, res) => {
     let id = chatId;
 
     if (chatId) {
-      // Existing chat - load, append new message, save again
+     
       const filePath = path.join(CHAT_STORAGE_DIR, `${chatId}.json`);
       if (fs.existsSync(filePath)) {
         const content = fs.readFileSync(filePath, "utf-8");
@@ -69,7 +68,7 @@ app.post("/api/generate", async (req, res) => {
 
         chatData.timestamp = new Date().toISOString(); // Update chat last modified
       } else {
-        // chatId given but file missing — create new chat
+        
         id = Date.now().toString();
         chatData = {
           id,
@@ -86,7 +85,7 @@ app.post("/api/generate", async (req, res) => {
 
       fs.writeFileSync(filePath, JSON.stringify(chatData, null, 2));
     } else {
-      // New chat session
+ 
       id = Date.now().toString();
       chatData = {
         id,
@@ -111,7 +110,7 @@ app.post("/api/generate", async (req, res) => {
   }
 });
 
-// GET: List all saved chats (id, last prompt, last timestamp)
+
 app.get("/api/chats", (req, res) => {
   try {
     if (!fs.existsSync(CHAT_STORAGE_DIR)) {
