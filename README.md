@@ -56,17 +56,7 @@ Users can load previous chats from the sidebar.
 Chats are stored on disk under the `chat-history` folder.
 Users can clear all chat history using the button at the bottom of the sidebar.
 
-Screenshots:
-
-![Homepage](pics-and-video/ai-assistant-pic-01.png)
-
-
-![Chat](pics-and-video/ai-assistant-pic-02.png)
-
-
- Demo Video:
-
-[Watch here](Pics-And-Video\video.mp4)
+ **watch demo video and screechots in pics and video folder**
 
 
 
