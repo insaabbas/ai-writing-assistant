@@ -1,3 +1,4 @@
 node_modules/
 *.log
 Pics-And-Video/Ai-assistant-video.mp4
+.env

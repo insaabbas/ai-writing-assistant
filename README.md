@@ -2,6 +2,21 @@
 
 This is a simple AI writing assistant web application built with React and Node.js, integrated with Google Gemini API.
 
+## Setup
+
+1. Create a `.env` file inside the backend folder.
+2. Add your Google API key like this:
+
+   GOOGLE_API_KEY=your_actual_google_api_key_here
+
+3. Run the backend server as usual.
+
+
+*Note:* The `.env` file is not included in the repository for security reasons. Please get the API key separately.
+
+
+
+
  Features:
 
  Users can select chat type: Email, Blog, Resume, or Simple Chat
